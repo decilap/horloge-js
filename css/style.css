@@ -1,0 +1,163 @@
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin:0;
+}
+
+
+#big_outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    /* background-color: skyblue; */
+}
+
+
+#small_outer{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: firebrick; */
+}
+
+
+.big_outer_inner{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(34, 178, 118);
+    position: absolute;
+    border-radius: 50%;
+    transition: all ease-out .9s;
+}
+
+
+.small_outer_inner{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(178, 34, 101);
+    position: absolute;
+    border-radius: 50%;
+    transition: all ease-out .8s;
+}
+
+
+
+.earth {
+    --d:300px;
+    width: var(--d);
+    height:var(--d);
+    display:inline-block;
+    margin: 5px;
+    border-radius: 50%;
+    box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px #000;
+    background: 
+      url(https://i.stack.imgur.com/3SLqF.jpg)
+      0/auto 100%;
+      animation: spin 3s linear infinite;
+  }
+
+  .earth--small {
+    --d:150px;
+    width: var(--d);
+    height:var(--d);;
+  }
+
+  .earth--big {
+    --d:250px;
+    width: var(--d);
+    height:var(--d);
+  }
+  
+  @keyframes spin {
+    0%{
+        transform:rotateZ(0);
+    }
+    100%{
+        transform:rotateZ(-360deg);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+/* Layout */
+.main {
+    display: flex;
+    padding: 2em;
+    height: 90vh;
+    justify-content: center;
+    align-items: middle;
+}
+
+.clockbox,
+#clock {
+    width: 100%;
+}
+
+/* Clock styles */
+.circle {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.mid-circle {
+    fill: #000;
+}
+.hour-marks {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.hour-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 17;
+    stroke-miterlimit: 10;
+}
+
+.minute-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 11;
+    stroke-miterlimit: 10;
+}
+
+.second-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+}
+
+/* Transparent box ensuring arms center properly. */
+.sizing-box {
+    fill: none;
+}
+
+/* Make all arms rotate around the same center point. */
+#hour,
+#minute,
+#second {
+    transform-origin: 300px 300px;
+    transition: transform .5s ease-in-out;
+}
